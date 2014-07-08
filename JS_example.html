@@ -1,5 +1,8 @@
 <html>
 	<head>
+		<script src="jquery-1.11.1.js">
+
+		</script>
 		<style>
 			h1 {
 				border-bottom: 1px solid gray;
@@ -24,22 +27,20 @@
 				background-color: gray;
 				text-align: center;
 			}
-			.깨진접시 {
-				border: 1px solid gray;
-				font-size: 15px;
-				padding: 5px;
-				margin: 10px;
-				width: 100px;
+			.깨짐 {
 				background-color: black;
 				color: white;
-				text-align: center;
+			}
+			.닦음 {
+				background-color: white;
+				color: red;
 			}
 			.contain {
 				border-left: 2px solid gray;
 				border-right: 2px solid gray;
 				border-bottom: 2px solid gray;
 				width: 300px;
-				height: 100px;
+				height: 200px;
 				margin: 10px;
 				padding: 10px;
 
@@ -47,6 +48,11 @@
 			.label {
 				margin-left: 150px;
 				font-size: 20px;
+			}
+			#button {
+				width: 300px;
+				margin: 10px;
+				padding: 10px;
 			}
 
 		</style>
@@ -59,7 +65,7 @@
 				for(i=0; i<접시들.length; i++) {
 					닦을접시 = 접시들[i];
 					if (닦을접시.text()=='접시') {
-						닦을접시.addClass('clean');
+						닦을접시.addClass('닦음');
 						$('#건조대').append(닦을접시);
 					} else {
 						$('#쓰레기통').append(닦을접시);
@@ -69,27 +75,22 @@
 		</script>	
 		<h1>html, css, javascript 실전 예제</h1>
 		<nav>
-			<input type="button" value="설거지" onclick="설거지()" />
+			<input id="button" type="button" value="설거지" onclick="설거지()" />
 			<div id="건조대" class="contain"> </div> 
-			<div id="label"> 건조대 </div>
+			<div class="label"> 건조대 </div>
 			<div id="쓰레기통" class="contain"> </div>
-			<div id="label"> 쓰레기통 </div>
+			<div class="label"> 쓰레기통 </div>
 		</nav>
 		<article>
 			<div id='dishcontain'>
 				<div id='접시1' class='접시'>접시</div>
 				<div id='접시2' class='접시'>접시</div>
-				<div id='접시3' class='깨진접시'>깨진접시</div>
+				<div id='접시3' class='접시 깨짐'>깨진접시</div>
 				<div id='접시4' class='접시'>접시</div>
-				<div id='접시5' class='깨진접시'>접시</div>
+				<div id='접시5' class='접시 깨짐'>깨진접시</div>
 				<div id='접시6' class='접시'>접시</div>
 			</div>
 		</article>
 		
-		<script>
-			
-
-
-		</script>
 	</body>
 </html>
